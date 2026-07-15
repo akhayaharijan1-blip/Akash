@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Special Surprise ✨</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#050510;
+overflow:hidden;
+color:white;
+}
+.page{
+width:100%;
+height:100vh;
+display:none;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:30px;
+position:absolute;
+top:0;
+left:0;
+}
+#page8{
+justify-content:flex-start;
+padding-top:35px;
+padding-bottom:25px;
+overflow-y:auto;
+}
+.active{
+display:flex;
+}
+
+.stars{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:-1;
+}
+
+.star{
+position:absolute;
+background:white;
+border-radius:50%;
+animation:twinkle 3s infinite;
+box-shadow:
+0 0 4px white,
+0 0 8px white;
+}
+
+@keyframes twinkle{
+0%{opacity:.2}
+50%{opacity:1}
+100%{opacity:.2}
+}
+
+h1{
+font-size:42px;
+margin-bottom:20px;
+color:#ffd700;
+text-shadow:
+0 0 10px rgba(255,215,0,.6),
+0 0 20px rgba(255,215,0,.4);
+}
+
+p{
+font-size:18px;
+line-height:1.7;
+max-width:700px;
+}
+
+.btn{
+margin-top:30px;
+padding:14px 35px;
+border:none;
+border-radius:50px;
+font-size:17px;
+font-weight:600;
+cursor:pointer;
+background:linear-gradient(
+45deg,
+#fff8dc,
+#ffd700,
+#ffec99
+);
+color:#000;
+box-shadow:
+0 0 15px rgba(255,215,0,.4),
+0 0 25px rgba(255,215,0,.2);
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+.fade{
+animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.photo{
+width:280px;
+height:380px;
+object-fit:cover;
+border-radius:20px;
+box-shadow:0 0 25px rgba(255,215,0,.4);
+border:3px solid rgba(255,215,0,.6);
+}
+
+.video-box{
+width:90%;
+max-width:700px;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 0 30px rgba(255,215,0,.3);
+}
+
+video{
+width:100%;
+display:block;
+}
+
+.letter-box{
+max-width:900px;
+height:60vh;
+overflow:auto;
+padding:25px;
+background:rgba(255,255,255,.05);
+border-radius:20px;
+backdrop-filter:blur(10px);
+text-align:left;
+line-height:2;
+margin-bottom:20px;
+}
+
+
+.final-title{
+font-size:60px;
+font-family:'Great Vibes',cursive;
+}
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+pointer-events:none;
+}
+#page7{
+background:#050510;
+overflow:hidden;
+}
+
+#fireworksCanvas{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+}
+#celebrateText{
+display:none;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:36px;
+font-weight:600;
+line-height:1.5;
+text-align:center;
+padding:0 20px;
+z-index:10;
+color:#fffdf2;
+text-shadow:
+0 0 12px rgba(255,215,0,.9),
+0 0 28px rgba(255,215,0,.5);
+animation:fadeGlow 2s ease-in-out;
+}
+
+@keyframes fadeGlow{
+0%{
+opacity:0;
+transform:translate(-50%,-45%);
+}
+100%{
+opacity:1;
+transform:translate(-50%,-50%);
+}
+}    
+@media(max-width:768px){
+
+h1{
+font-size:30px;
+}
+
+.photo{
+width:220px;
+height:300px;
+}
+
+.final-title{
+font-size:42px;
+}
+#celebrateText{
+font-size:28px !important;
+line-height:1.4;
+padding:0 20px;
+    }
+#page8{
+padding-top:20px;
+padding-left:18px;
+padding-right:18px;
+}
+
+.letter-box{
+height:50vh;
+padding:18px;
+margin-bottom:15px;
+}
+
+.btn{
+margin-top:12px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="stars" id="stars"></div>
+
+<!-- SCREEN 1 -->
+
+<section class="page active fade" id="page1">
+
+<h1>A Special Surprise Awaits ✨</h1>
+
+<p>
+Someone special deserves something beautiful today.
+Take a small journey through these memories and moments.
+</p>
+
+<button class="btn" onclick="playClick();nextPage(2)">
+💛 Open Surprise
+</button>
+
+</section>
+
+<!-- SCREEN 2 -->
+
+<section class="page fade" id="page2">
+
+<h1>Make A Wish 🌠</h1>
+
+<p>
+Before we begin, close your eyes for a moment and make a wish.
+May every good thing find its way to you.
+</p>
+
+<button class="btn" onclick="playClick();nextPage(3)">
+⭐ Continue
+</button>
+
+</section>
+
+<!-- PART 1 END -->
+
+<!-- SCREEN 3 -->
+
+<section class="page fade" id="page3">
+
+<h1>Memory One 📸</h1>
+
+<img src="aaradhya1.jpg" class="photo">
+
+<p style="margin-top:25px;">
+Every beautiful story begins with a beautiful soul.
+Some people leave a positive mark wherever they go.
+</p>
+
+<button class="btn" onclick="playClick();nextPage(4)">
+➡️ Next Memory
+</button>
+
+</section>
+
+<!-- SCREEN 4 -->
+
+<section class="page fade" id="page4">
+
+<h1>A Beautiful Presence ✨</h1>
+
+<img src="aaradhya2.jpg" class="photo">
+
+<p style="margin-top:25px;">
+There are people who make ordinary moments feel special.
+Their kindness stays in hearts longer than words ever can.
+</p>
+
+<button class="btn" onclick="playClick();nextPage(5)">
+💫 One More
+</button>
+
+</section>
+
+<!-- SCREEN 5 -->
+
+<section class="page fade" id="page5">
+
+<h1>Almost There 🌸</h1>
+
+<img src="aaradhya3.jpg" class="photo">
+
+<p style="margin-top:25px;">
+A smile that deserves happiness,
+a heart that deserves every good thing life can offer.
+</p>
+
+<button class="btn" onclick="playClick();nextPage(6)">
+💛 Almost There
+</button>
+
+</section>
+
+<!-- PART 2 END -->
+
+<!-- SCREEN 6 -->
+
+<section class="page fade" id="page6">
+
+<h1>For Someone Truly Special 💛</h1>
+
+<p>
+The next few moments are dedicated to someone whose presence makes the world a little brighter.
+</p>
+
+<button class="btn" onclick="playClick();startCelebration()">
+🥂 Let's Celebrate
+</button>
+
+</section>
+
+<!-- SCREEN 7 -->
+
+<section class="page fade" id="page7">
+
+<h1 id="celebrateText" style="
+display:none;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:36px;
+z-index:10;
+text-shadow:0 0 25px gold;
+">
+
+✨ Wishing You the Happiest Birthday, Dear Aaradhya! 💛
+</h1>
+
+<canvas id="fireworksCanvas"></canvas>
+
+</section>
+
+<!-- PART 3 END -->
+
+<!-- SCREEN 8 -->
+
+<section class="page fade" id="page8">
+
+<h1>A Letter For A Special Best Friend 💌</h1>
+
+<div class="letter-box">
+
+<p>
+
+<b style="font-size:22px;color:#FFD700;">
+A Letter From My Heart... 🤍
+</b>
+
+<br><br>
+
+There are a few words I've been wanting to share with you for a long time. ✨
+
+Today felt like the perfect day to finally write them down. 💌
+
+If you've made it this far, thank you. I hope you'll stay until the very last line, because every word below comes straight from my heart. 💛
+
+<br><br>
+
+Dear Aaradhya, 💐
+
+First of all, Happy Birthday! 🥳🎂
+
+Today is all about celebrating you—the wonderful person you are and the beautiful journey you're living. ✨ Every birthday is a reminder of how much you've grown, how many memories you've created, and how many smiles you've shared with the people around you. 🌸
+
+Life moves surprisingly fast. ⏳ Days become weeks, weeks become months, and before we know it, another year has passed. Yet, among all those passing moments, there are a few people whose kindness stays with us forever. 🤍 You are one of those rare people. 💖
+
+Your smile has a way of making ordinary moments feel brighter. 😊 Your kindness makes people feel comfortable, valued, and appreciated. 🫂 Sometimes you may not even realize how positively you affect the people around you—but you truly do. 🌼
+
+As your friend, I simply want to say thank you. 💛 Thank you for every smile, every conversation, every laugh, and every memory. 📸✨ Even the smallest moments become special when they're shared with someone genuine.
+
+On your birthday, I hope you take a moment to appreciate yourself. 💎 Sometimes we're so busy chasing dreams that we forget how valuable we already are. Never underestimate your worth. Never doubt yourself. 🤍 You deserve happiness, respect, peace, success, and every beautiful thing life has to offer. 🌈
+
+May this new chapter bring countless opportunities. 🚀 May every challenge make you stronger, every success make you prouder, and every new day give you another reason to smile. 😊🌷
+
+The universe is filled with billions of stars... 🌌⭐ yet every star shines in its own unique way. Just like that, there is only one Aaradhya. Your story, your dreams, your personality, and your journey are beautifully your own. Never stop believing in them. ✨
+
+Today is your day. 🎉 Celebrate your achievements, celebrate your growth, celebrate every lesson you've learned, and celebrate the amazing person you're becoming. 🌱🏆
+
+Always remember this...
+
+No matter where life takes you, never lose your beautiful smile. 😊 Keep being kind. Keep believing in yourself. 🌟 Great things often begin with small steps, and I'm sure your best days are still waiting ahead. 💫
+
+I sincerely pray that your heart always stays happy, your dreams always stay alive, and your future becomes even brighter with each passing year. 💖🌸
+
+May your life be filled with endless joy, good health, success, peace, unforgettable memories, and countless reasons to smile every single day. 🥰🎊✨
+
+Once again...
+
+Happy Birthday, Aaradhya! 🥳🎂💐
+
+May this year become one of the happiest chapters of your life. 🤍✨
+
+With warm wishes,
+
+Akhaya 💛
+
+</p>
+
+</div>
+
+<button class="btn" onclick="playClick();nextPage(9)">
+🎂 Final Wish
+</button>
+
+</section>
+
+<!-- SCREEN 9 -->
+
+<section class="page fade" id="page9">
+
+<h1 class="final-title">
+Happy Birthday Aaradhya 💛✨
+</h1>
+
+<p style="margin-top:25px;">
+May every star in the universe remind you how special you are.<br>
+May happiness, success and beautiful memories always stay with you.
+</p>
+
+<button class="btn" onclick="playClick();location.reload()">
+💖 Read Again
+</button>
+
+</section>
+
+<canvas id="confetti"></canvas>
+
+<script>
+function playClick(){
+
+const click=document.getElementById("clickSound");
+
+click.currentTime=0;
+
+click.volume=0.35;
+
+click.play();
+
+    }
+function nextPage(page){
+
+document.querySelectorAll('.page').forEach(section=>{
+section.classList.remove('active');
+});
+
+document.getElementById('page'+page).classList.add('active');
+
+}
+
+function startCelebration(){
+const bg=document.getElementById("bgMusic");
+
+let fadeOut=setInterval(()=>{
+if(bg.volume>0.02){
+bg.volume-=0.02;
+}else{
+clearInterval(fadeOut);
+bg.pause();
+bg.currentTime=0;
+}
+},120);
+nextPage(7);
+document.getElementById("celebrationMusic").play();
+startFireworks();
+
+setTimeout(()=>{
+
+document.getElementById("celebrateText").style.display="block";
+
+},2000);
+
+setTimeout(()=>{
+clearInterval(fireworkInterval);
+nextPage(8);
+document.getElementById("celebrationMusic").pause();
+document.getElementById("celebrationMusic").currentTime=0;
+document.getElementById("rocketSound").pause();
+document.getElementById("rocketSound").currentTime=0;
+const bg=document.getElementById("bgMusic");
+bg.currentTime=0;
+bg.volume=0;
+bg.play();
+
+let fade=setInterval(()=>{
+if(bg.volume<0.35){
+bg.volume+=0.02;
+}else{
+clearInterval(fade);
+}
+},200);
+
+},18000);
+}
+
+/* STARS */
+
+const starsContainer=document.getElementById("stars");
+
+for(let i=0;i<65;i++){
+
+const star=document.createElement("div");
+
+star.classList.add("star");
+
+let size=Math.random()*3+1;
+
+star.style.width=size+"px";
+star.style.height=size+"px";
+
+star.style.left=Math.random()*100+"%";
+star.style.top=Math.random()*100+"%";
+
+star.style.animationDuration=(Math.random()*3+2)+"s";
+
+starsContainer.appendChild(star);
+
+}
+
+/* CONFETTI */
+
+const canvas=document.getElementById("confetti");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let pieces=[];
+
+for(let i=0;i<10;i++){
+
+pieces.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*6+2,
+speed:Math.random()*3+1
+});
+
+}
+
+function drawConfetti(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+pieces.forEach(p=>{
+
+ctx.fillStyle=["#ffd700","#ffffff","#ffec99"][Math.floor(Math.random()*3)];
+
+ctx.fillRect(p.x,p.y,p.r,p.r);
+
+p.y+=p.speed;
+
+if(p.y>canvas.height){
+
+p.y=0;
+p.x=Math.random()*canvas.width;
+
+}
+
+});
+
+requestAnimationFrame(drawConfetti);
+
+}
+
+drawConfetti();
+ window.addEventListener("load", () => {
+const music=document.getElementById("bgMusic");
+music.volume=0;
+music.play().then(()=>{
+let fade=setInterval(()=>{
+if(music.volume<0.35){
+music.volume+=0.02;
+}else{
+clearInterval(fade);
+}
+},200);
+}).catch(()=>{});
+});   
+/* FIREWORKS */
+
+const fireCanvas=document.getElementById("fireworksCanvas");
+const fireCtx=fireCanvas.getContext("2d");
+
+fireCanvas.width=window.innerWidth;
+fireCanvas.height=window.innerHeight;
+
+let fireworks=[];
+
+function launchFirework(){
+const rocketSound = document.getElementById("rocketSound");
+rocketSound.volume = 0.18;
+rocketSound.currentTime = 0;
+rocketSound.play();
+    
+let rocket={
+x:Math.random()*fireCanvas.width,
+y:fireCanvas.height,
+targetY:100+Math.random()*250,
+speed:5
+};
+
+fireworks.push(rocket);
+
+}
+let fireworkInterval;
+let fireworkStarted=false;
+
+function startFireworks(){
+
+if(fireworkStarted) return;
+
+fireworkStarted=true;
+
+fireworkInterval = setInterval(()=>{
+launchFirework();
+},800);
+animateFireworks();
+
+    }
+function animateFireworks(){
+
+fireCtx.clearRect(0,0,fireCanvas.width,fireCanvas.height);
+
+for(let i=0;i<fireworks.length;i++){
+
+let f=fireworks[i];
+if(f.particle){
+
+fireCtx.beginPath();
+
+fireCtx.arc(f.x,f.y,2,0,Math.PI*2);
+
+fireCtx.fillStyle=f.color;
+
+fireCtx.fill();
+
+f.x+=f.vx;
+f.y+=f.vy;
+
+f.life--;
+
+if(f.life<=0){
+
+fireworks.splice(i,1);
+
+}
+
+continue;
+
+    }
+for(let t=0;t<8;t++){
+
+fireCtx.beginPath();
+
+fireCtx.arc(
+f.x,
+f.y+t*5,
+2.2-t*0.2,
+0,
+Math.PI*2
+);
+
+fireCtx.fillStyle=`rgba(255,215,0,${0.8-t*0.1})`;
+
+fireCtx.fill();
+
+}
+
+fireCtx.beginPath();
+fireCtx.arc(f.x,f.y,4,0,Math.PI*2);
+fireCtx.fillStyle="#FFD700";
+fireCtx.fill();
+
+f.y-=f.speed;
+
+if(f.y<=f.targetY){
+for(let j=0;j<120;j++){
+
+let angle=Math.random()*Math.PI*2;
+let speed=Math.random()*6+1;
+
+fireworks.push({
+particle:true,
+x:f.x,
+y:f.y,
+vx:Math.cos(angle)*speed,
+vy:Math.sin(angle)*speed,
+life:100,
+color:[
+"#FFD700",
+"#FFFFFF",
+"#87CEFA",
+"#FF69B4",
+"#DDA0DD"
+][Math.floor(Math.random()*5)]
+});
+
+}
+
+fireworks.splice(i,1);
+
+    }
+}
+
+requestAnimationFrame(animateFireworks);
+
+  }
+</script>
+<audio id="bgMusic" src="music2.mp3" loop></audio>
+<audio id="celebrationMusic" src="birthday.mp3"></audio>
+<audio id="rocketSound" src="rocket.mp3" preload="auto"></audio>
+<audio id="clickSound" src="click.mp3" preload="auto"></audio>
+<audio id="whooshSound" src="whoosh.mp3" preload="auto"></audio>
+</body>
+  </html>
